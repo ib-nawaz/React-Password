@@ -57,25 +57,25 @@ const Pass = () => {
 
 
   return (
-    <div className=' transition-all duration-500 ease-in-out'>
-      <div className="min-h-screen flex items-center justify-center p-4">
-        <div className="w-full max-w-xl bg-red-200 rounded-2xl p-6 shadow-2xl">
+    <div className='transition-all duration-500 ease-in-out'>
+      <div className="min-h-screen flex items-center justify-center p-3 sm:p-4 md:p-6">
+        <div className="w-full max-w-sm sm:max-w-md md:max-w-xl bg-red-200 rounded-2xl p-4 sm:p-6 shadow-2xl">
 
 
-          <div className="mb-6">
-            <h1 className="text-3xl font-bold text-white">
+          <div className="mb-4 sm:mb-6">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">
               Password Generator
             </h1>
 
-            <p className="text-slate-400 mt-2">
+            <p className="text-sm sm:text-base text-slate-400 mt-2">
               Generate a strong and secure password
             </p>
           </div>
 
           {/* Password */}
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <input
-              className="h-14 flex-1 min-w-0 bg-slate-950 border-2 border-slate-700 rounded-xl px-4 text-sky-400 font-mono text-base outline-none focus:border-sky-500"
+              className="h-12 sm:h-14 w-full sm:flex-1 min-w-0 bg-slate-950 border-2 border-slate-700 rounded-xl px-3 sm:px-4 text-sky-400 font-mono text-sm sm:text-base outline-none focus:border-sky-500"
               type="text"
               placeholder="Your password"
               readOnly
@@ -85,7 +85,7 @@ const Pass = () => {
             {/* Copy Button */}
             <button
               onClick={COPY}
-              className="px-5 h-14 bg-violet-600 hover:bg-violet-500 text-white font-semibold rounded-xl cursor-pointer transition-all active:scale-95"
+              className="w-full sm:w-auto px-5 h-12 sm:h-14 bg-violet-600 hover:bg-violet-500 text-white font-semibold rounded-xl cursor-pointer transition-all active:scale-95"
             >
               Copy
             </button>
@@ -93,15 +93,15 @@ const Pass = () => {
 
 
           {/* Copy Message */}
-          <p className="text-center text-emerald-400 font-mono mt-4 [text-shadow:0_0_10px_rgba(52,211,153,0.8)]">
+          <p className="text-center text-xs sm:text-base text-emerald-400 font-mono mt-3 sm:mt-4 min-h-6 [text-shadow:0_0_10px_rgba(52,211,153,0.8)]">
             {msg}
           </p>
 
-          <div className="mt-6 bg-slate-800/60 rounded-2xl p-5">
+          <div className="mt-4 sm:mt-6 bg-slate-800/60 rounded-2xl p-4 sm:p-5">
 
             {/* Length */}
-            <div className="flex justify-between items-center mb-4">
-              <span className="text-slate-300 font-medium">
+            <div className="flex justify-between items-center mb-3 sm:mb-4">
+              <span className="text-sm sm:text-base text-slate-300 font-medium">
                 Password Length : {length}
               </span>
             </div>
@@ -110,15 +110,15 @@ const Pass = () => {
             <input
               className="w-full accent-sky-500 cursor-pointer"
               type="range"
-              min="0"
+              min="6"
               max="29"
               onChange={(e) => { setlength(Number(e.target.value)) }}
               value={length}
             />
 
             {/* Options */}
-            <div className="flex flex-wrap gap-6 mt-6">
-              <label className="flex items-center gap-2 text-slate-300 cursor-pointer select-none">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 mt-4 sm:mt-6">
+              <label className="flex items-center gap-2 text-sm sm:text-base text-slate-300 cursor-pointer select-none">
                 <input
                   className="w-5 h-5 accent-violet-600 cursor-pointer"
                   type="checkbox"
@@ -128,7 +128,7 @@ const Pass = () => {
                 Numbers
               </label>
 
-              <label className="flex items-center gap-2 text-slate-300 cursor-pointer select-none">
+              <label className="flex items-center gap-2 text-sm sm:text-base text-slate-300 cursor-pointer select-none">
                 <input
                   className="w-5 h-5 accent-violet-600 cursor-pointer"
                   type="checkbox"
@@ -144,7 +144,7 @@ const Pass = () => {
           <div className='mt-4 text-center'>
             <button
               onClick={() => setregenerate(regenerate + 1)}
-              className="relative overflow-hidden px-6 h-14 rounded-xl bg-orange-500 text-white font-bold shadow-lg shadow-orange-500/30 transition-all duration-200 hover:bg-orange-600 hover:shadow-orange-500/50 active:scale-90 cursor-pointer active:bg-orange-700 focus:outline-none focus:ring-4 focus:ring-orange-300"
+              className="relative overflow-hidden w-full sm:w-auto px-6 h-12 sm:h-14 rounded-xl bg-orange-500 text-white font-bold shadow-lg shadow-orange-500/30 transition-all duration-200 hover:bg-orange-600 hover:shadow-orange-500/50 active:scale-90 cursor-pointer active:bg-orange-700 focus:outline-none focus:ring-4 focus:ring-orange-300"
             >
               Re-Generate
             </button>
